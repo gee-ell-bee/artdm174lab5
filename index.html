@@ -2,11 +2,12 @@
 <html lang="en">
 
 <head>
-	<title>HTML5 Video with JS synchronized cuepoints: demo</title>
+	<title>Grey's Lab 5: HTML5 Video with JS synchronized cuepoints</title>
 	<meta charset="utf-8">
 
-	<link rel="stylesheet" href="c/main.css" />
+	<link rel="stylesheet" href="c/main.css">
 	<script type="module" src="j/main.js" defer></script>
+	<meta name="author" content="tb + Grey Larrain Bratt">
 
 </head>
 
@@ -17,9 +18,8 @@
 
 		<section class="col1">
 			<video id="vid" width="352" controls>
-				<source src="assets/leverage-a-synergy.mp4" type="video/mp4" />
-				<source src="assets/leverage-a-synergy.webm" type="video/webm" />
-				<source src="assets/leverage-a-synergy.ogv" type="video/ogg" />
+				<source src="assets/video/jj_lin_twilight.mp4" type="video/mp4" />
+				<source src="assets/video/jj_lin_twilight.webm" type="video/webm" />
 				<track kind="captions" label="On" srclang="en" src="/captions/synergy.vtt" default />
 
 				<!-- final fallback to text -->
@@ -53,9 +53,12 @@
 					<fieldset>
 						<select id="video_select">
 							<option>Select a video to play...</option>
-							<option value="assets/leverage-a-synergy.mp4">Leverage(mp4)</option>
-							<option value="assets/leverage-a-synergy.ogv">Leverage(ogv)</option>
-							<option value="assets/leverage-a-synergy.webm">Leverage(webm)</option>
+							<option value="assets/video/jj_lin_twilight.mp4">Twilight (MP4)</option>
+							<option value="assets/video/jj_lin_twilight.webm">Twilight (WEBM)</option>
+							<option value="assets/video/jj_lin_twilight_instrumental.mp4">Twilight - Instrumental (MP4)</option>
+							<option value="assets/video/jj_lin_twilight_instrumental.webm">Twilight - Instrumental (WEBM)</option>
+							<option value="assets/video/jj_lin_twilight_lyrics_chtrad_py_en.webm">Twilight (with lyrics) (WEBM)</option>							<option value="assets/video/jj_lin_twilight_lyrics_chtrad_py_en.mp4">Twilight (with lyrics) (MP4)</option>
+
 						</select>
 					</fieldset>
 					<fieldset>
