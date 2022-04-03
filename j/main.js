@@ -16,8 +16,8 @@ import { cueTimer } from "./modules/cuepoints.js";
 document.addEventListener("DOMContentLoaded", (e) => {
 
     var myCues = [
-        { seconds: 2, callback: func1 },
-        { seconds: 9, callback: func2 },
+        { seconds: 10, callback: askAboutLanguage },
+        { seconds: 35, callback: func2 },
         { seconds: 15, callback: func3 }
     ];
 
@@ -42,7 +42,7 @@ document.addEventListener("DOMContentLoaded", (e) => {
 //the custom callback functions to trigger when a cuepoint is hit.
 //You can code up whatever behavior you need in your own callbacks
 //feel free to rename the functions to be more descriptive of what they do.
-function func1() {
+function askAboutLanguage() { // pop-up to let user know they can change the sub/captions language from English to Chinese
 
 }
 

@@ -37,12 +37,12 @@
 		clip.currentTime = 0;
 	}
 
-	function muteclip(clip) 
+	function muteVideo(clip) 
 	{
 		clip.muted = true;
 	}
 
-	function unmuteclip(clip) 
+	function unmuteVideo(clip) 
 	{
 		clip.muted = false;
 	}

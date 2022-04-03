@@ -4,10 +4,11 @@
 <head>
 	<title>Grey's Lab 5: HTML5 Video with JS synchronized cuepoints</title>
 	<meta charset="utf8_general_ci">
+	<meta name="author" content="tb + Grey Larrain Bratt">
 
 	<link rel="stylesheet" href="c/main.css">
+	<script src="j/video_helpers.js" defer></script>
 	<script type="module" src="j/main.js" defer></script>
-	<meta name="author" content="tb + Grey Larrain Bratt">
 
 </head>
 
@@ -15,13 +16,19 @@
 	<h1>HTML5 Video with JS synchronized cuepoints: demo</h1>
 
 	<main id="container">
-
 		<section class="col1">
+
+			<audio id="audio" src="assets/audio/jj_lin_twilight.mp3" controls>
+				<source src="assets/audio/jj_lin_twilight.mp3" type="mp3">
+				<source src="assets/audio/jj_lin_twilight.webm" type="webm">
+				<p>Your browser cannot play this file, here is a link to the audio: <a href="assets/audio/jj_lin_twilight.mp3">Twilight</a>.</p>
+			</audio>
+
 			<video id="vid" width="528" controls>
 				<source src="assets/video/jj_lin_twilight.mp4" type="video/mp4">
 				<source src="assets/video/jj_lin_twilight.webm" type="video/webm">
 				<track label="English &lbrack;Subtitles&rbrack;" kind="subtitles" label="On" srclang="en" src="captions/jj_lin_twilight_eng_subs.vtt" default>
-				<track label="中文 - 繁體" kind="captions" srclang="zh" src="captions/jj_lin_twilight_chtrad_caps.vtt" default>
+				<track label="中文 - 繁體" kind="captions" srclang="zh" label="Off" src="captions/jj_lin_twilight_chtrad_caps.vtt">
 
 				<!-- final fallback to text -->
 				<h2>Twilight by J.J. Lin</h2>
@@ -74,30 +81,39 @@
 					<fieldset>
 						<input type="button" id="play_button" onclick="playVideo(vid)" value="Play">
 						<input type="button" id="pause_button" onclick="pauseVideo(vid)" value="Pause">
-						<input type="button" id="mute" onclick="" value="Mute">
-						<input type="button" id="unmute" onclick="" value="Unmute">
+						<input type="button" id="mute" onclick="muteVideo(vid)" value="Mute">
+						<input type="button" id="unmute" onclick="unmuteVideo(vid)" value="Unmute">
 						<input type="button" id="rewind" onclick="" value="Beginning">
 						<input type="button" id="end" onclick="" value="End">
 						<input type="button" id="seek" onclick="" value="Go to Statistics">
 					</fieldset>
-					<fieldset>
+					<fieldset class="half">
 						<select id="video_select">
 							<option>Select a video to play...</option>
 							<option value="assets/video/jj_lin_twilight.mp4">Twilight (MP4)</option>
 							<option value="assets/video/jj_lin_twilight.webm">Twilight (WEBM)</option>
-							<option value="assets/video/jj_lin_twilight_instrumental.mp4">Twilight - Instrumental (MP4)</option>
-							<option value="assets/video/jj_lin_twilight_instrumental.webm">Twilight - Instrumental (WEBM)</option>
+							<option value="assets/video/jj_lin_twilight_instrumental_lyrics_chtrad.mp4">Twilight - Instrumental (MP4)</option>
+							<option value="assets/video/jj_lin_twilight_instrumental_lyrics_chtrad.webm">Twilight - Instrumental (WEBM)</option>
 							<option value="assets/video/jj_lin_twilight_lyrics_chtrad_py_en.webm">Twilight (with lyrics) (WEBM)</option>
 							<option value="assets/video/jj_lin_twilight_lyrics_chtrad_py_en.mp4">Twilight (with lyrics) (MP4)</option>
 						</select>
 					</fieldset>
+					<fieldset class="half">
+						<select id="audio_select">
+							<option>Select an audio file to play...</option>
+							<option value="assets/audio/jj_lin_twilight.mp3">Twilight (MP3)</option>
+							<option value="assets/audio/jj_lin_twilight.webm">Twilight (WEBM)</option>
+							<option value="assets/audio/jj_lin_twilight_instrumental.MP3">Twilight - Instrumental (MP3)</option>
+							<option value="assets/audio/jj_lin_twilight_instrumental.webm">Twilight - Instrumental (WEBM)</option>
+						</select>
+					</fieldset>
 					<fieldset>
 						<label>Currently, rewind only works in Safari
-							<input type="button" id="rw" onclick="" title="Rewind" value="&lt; &lt;">
+							<input type="button" id="rw" onclick="playRate(vid, -1)" title="Rewind" value="&lt; &lt;">
 						</label>
-						<input type="button" id="ff" onclick="" title="Fast Forward" value="> >">
-						<input type="button" id="slo" onclick="" title="Half Speed" value="slo mo >">
-						<input type="button" id="normal" onclick="" value="normal >">
+						<input type="button" id="ff" onclick="playRate(vid, 1.5)" title="Fast Forward" value="> >">
+						<input type="button" id="slo" onclick="playRate(vid, .5)" title="Half Speed" value="slo mo >">
+						<input type="button" id="normal" onclick="playRate(vid, 1)" value="normal >">
 					</fieldset>
 				</form>
 			</div>
