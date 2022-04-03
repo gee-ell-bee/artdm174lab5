@@ -15,7 +15,7 @@ h1 {
 #container {
   display:grid;
   grid-gap: 2rem;
-  grid-template-columns: 1fr 2fr;
+  grid-template-columns: 1fr 1fr;
   position: relative;
   margin:auto;
   max-width: 1024px;
@@ -23,8 +23,9 @@ h1 {
 
 
 #vid {
-	width:352px;
-	height:288px;
+	width:528px;
+	height:528px;
+  margin: auto;
 }
 
 .col1 {
@@ -43,7 +44,7 @@ iframe {
 	height:100vh;
 }
 
-#caption {
+::cue {
   position: absolute;
   width: 355px;
   left: 0;
@@ -51,11 +52,10 @@ iframe {
   min-height:3em;
   text-align: center;
   font-family: sans-serif;
-  font-weight: bold;
   color: white;
   text-shadow: black 1px 1px 3px;
-  padding-bottom: .5em;
-  background-color:hsla(250,10%,50%,0.8)
+  padding: 1rem;
+  background-color:rgba(86, 86, 86, 0);
 }
 
 #transcript span {
@@ -63,7 +63,7 @@ iframe {
 }
 
 /* show the timings in square brackets before each "subtitle" in the transcript. */
-#transcript [data-begin]:before {
+#transcript [data-begin]::before {
   content: " [" attr(data-begin) "s-" attr(data-end)"s]   "; 
   font-size:80%; 
   display:table-cell; 

@@ -3,7 +3,7 @@
 
 <head>
 	<title>Grey's Lab 5: HTML5 Video with JS synchronized cuepoints</title>
-	<meta charset="utf-8">
+	<meta charset="utf8_general_ci">
 
 	<link rel="stylesheet" href="c/main.css">
 	<script type="module" src="j/main.js" defer></script>
@@ -17,39 +17,68 @@
 	<main id="container">
 
 		<section class="col1">
-			<video id="vid" width="352" controls>
+			<video id="vid" width="528" controls>
 				<source src="assets/video/jj_lin_twilight.mp4" type="video/mp4">
 				<source src="assets/video/jj_lin_twilight.webm" type="video/webm">
-				<track label="English" kind="captions" label="On" srclang="en" src="/captions/jj_lin_twilight_eng_subs.vtt" default>
-				<track label="Chinese (Traditional)" kind="captions" label="Off" srclang="zh" src="/captions/jj_lin_twilight_chtrad_subs.vtt" default>
+				<track label="English &lbrack;Subtitles&rbrack;" kind="subtitles" label="On" srclang="en" src="captions/jj_lin_twilight_eng_subs.vtt" default>
+				<track label="中文 - 繁體" kind="captions" srclang="zh" src="captions/jj_lin_twilight_chtrad_caps.vtt" default>
 
 				<!-- final fallback to text -->
-				<h2>How to leverage a synergy</h2>
-				<p>Hi, my name's Dr Archimedes Einstein and I'm a Doctor of Science at the University of Science in a
-					very famous town that you're too stupid to have heard of. Anyway, today we're going to talk about
-					"synergies". A lot of people are worried about synergies, but I can tell you that statistics show
-					there is no danger of increased cancer risk from synergies. However, it's better to be safe than
-					sorry. I'm going to demonstrate how you how we can leverage a synergy.
-				</p>
-				<p>First of all, I've got this banana. This banana represents "Web 2.0" and look, I've written on it
-					some "user-generated content" just to prove the point [LOL, WTF, You suck]. I take my "Web 2.0" and
-					I put it in an envelope marked "paradigm shift". OK. Very important, I put the envelope down and
-					With a bit of "blue sky thinking", I "push the envelope". Then, I take my leverage mallet, and URGH!
-					GRRAHH!! YARRRR!!!! ...and there we can see a synergy, leveraged.
-				</p>
+				<h2>Twilight by J.J. Lin</h2>
+				<p>Forgive me for this song, not written to anyone in particular.<br>
+					I have a feeling the night sky out of this window<br>
+					is one I've seen before. But when I look back, suddenly I don't recognize a thing.<br>
+					I'm searching through my memories over and over; of people, and those they care about<br>
+					Of places, and the ones I've moved beyond; Please, wait a minute</p>
+					
+					<p>Hard work melted [my] dreams down to water. Love's at my back pushing me to keep going<br>
+					But only when I lift my head up do I realize, I might have forgotten somebody along the way.<br>
+					So tired I can't sleep all night, everywhere you look you see the beauty of the night sky<br>
+					There must be someone; hiding away, escaping, dodging, concealing herself,<br>
+					Who is she?<br>
+					Who is she</p>
+
+					<p>Ooh</p>
+					
+					<p>Forgive me for this song, not written to anyone in particular.<br>
+					I have a feeling the night sky out of this window<br>
+					is one I've seen before. But when I look back, suddenly I don't recognize a thing.<br>
+					I'm looking through my memories over and over; of people, and those they care about<br>
+					Of places, and the ones I've moved beyond;</p>
+					
+					<p>Hard work melted [my] dreams down to water. Love's at my back pushing me to keep going<br>
+					But only when I lift my head up do I realize, I might have forgotten somebody along the way.<br>
+					So tired I can't sleep all night, everywhere you look you see the beauty of the night sky<br>
+					There must be someone; hiding away, escaping, dodging, concealing herself,<br>
+					Who is she,<br>
+					Who is she?</p>
+
+					<p>Ohh</p>
+					
+					<p>Maybe only when I truly face myself can I release my inhibitions,<br>
+					And uncover what at first I was too afraid to face</p>
+					
+					<p>Hard work melted [my] dreams down to water. Love's at my back pushing me to keep going<br>
+					But only when I lift my head up do I realize, I might have forgotten somebody along the way.<br>
+					So tired I can't sleep all night, everywhere you look you see the beauty of the night sky<br>
+					She must be there; hiding away, escaping, dodging, concealing herself,<br>
+					Who is she?<br>
+					Who is she?</p>
+					
+					<p>Who is she?</p>
 			</video>
 
 
 			<div id="controls">
 				<form id="video_form">
 					<fieldset>
-						<input type="button" id="play_button" onclick="" value="Play" />
-						<input type="button" id="pause_button" onclick="" value="Pause" />
-						<input type="button" id="mute" onclick="" value="Mute" />
-						<input type="button" id="unmute" onclick="" value="Unmute" />
-						<input type="button" id="rewind" onclick="" value="Beginning" />
-						<input type="button" id="end" onclick="" value="End" />
-						<input type="button" id="seek" onclick="" value="Go to Statistics" />
+						<input type="button" id="play_button" onclick="playVideo(vid)" value="Play">
+						<input type="button" id="pause_button" onclick="pauseVideo(vid)" value="Pause">
+						<input type="button" id="mute" onclick="" value="Mute">
+						<input type="button" id="unmute" onclick="" value="Unmute">
+						<input type="button" id="rewind" onclick="" value="Beginning">
+						<input type="button" id="end" onclick="" value="End">
+						<input type="button" id="seek" onclick="" value="Go to Statistics">
 					</fieldset>
 					<fieldset>
 						<select id="video_select">
@@ -58,17 +87,17 @@
 							<option value="assets/video/jj_lin_twilight.webm">Twilight (WEBM)</option>
 							<option value="assets/video/jj_lin_twilight_instrumental.mp4">Twilight - Instrumental (MP4)</option>
 							<option value="assets/video/jj_lin_twilight_instrumental.webm">Twilight - Instrumental (WEBM)</option>
-							<option value="assets/video/jj_lin_twilight_lyrics_chtrad_py_en.webm">Twilight (with lyrics) (WEBM)</option>							<option value="assets/video/jj_lin_twilight_lyrics_chtrad_py_en.mp4">Twilight (with lyrics) (MP4)</option>
-
+							<option value="assets/video/jj_lin_twilight_lyrics_chtrad_py_en.webm">Twilight (with lyrics) (WEBM)</option>
+							<option value="assets/video/jj_lin_twilight_lyrics_chtrad_py_en.mp4">Twilight (with lyrics) (MP4)</option>
 						</select>
 					</fieldset>
 					<fieldset>
 						<label>Currently, rewind only works in Safari
-							<input type="button" id="rw" onclick="" title="Rewind" value="&lt; &lt;" />
+							<input type="button" id="rw" onclick="" title="Rewind" value="&lt; &lt;">
 						</label>
-						<input type="button" id="ff" onclick="" title="Fast Forward" value="> >" />
-						<input type="button" id="slo" onclick="" title="Half Speed" value="slo mo >" />
-						<input type="button" id="normal" onclick="" value="normal >" />
+						<input type="button" id="ff" onclick="" title="Fast Forward" value="> >">
+						<input type="button" id="slo" onclick="" title="Half Speed" value="slo mo >">
+						<input type="button" id="normal" onclick="" value="normal >">
 					</fieldset>
 				</form>
 			</div>

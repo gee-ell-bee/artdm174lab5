@@ -1,6 +1,6 @@
-/** video_helpers.js
+/** clipeo_helpers.js
  *  
- * Helper functions for controlling the video element.
+ * Helper functions for controlling the clipeo element.
  * by Troy Bennett 7-2010
  *
  */
@@ -30,12 +30,19 @@
 		clip.pause();
 	}
 
-	function muteVid(clip) 
+	/* function below written by GLB */
+	function stopVideo(clip)
+	{
+		clip.pause();
+		clip.currentTime = 0;
+	}
+
+	function muteclip(clip) 
 	{
 		clip.muted = true;
 	}
 
-	function unmuteVid(clip) 
+	function unmuteclip(clip) 
 	{
 		clip.muted = false;
 	}
