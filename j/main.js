@@ -70,6 +70,10 @@ function subtitleAttention() { // pop-up to let user know they can change the su
     setTimeout(() => {
         pop.classList.toggle("hide");
     }, 2000);
+    // remove styles
+    setTimeout(() => {
+        pop.classList.toggle("styles");
+    }, 7000);
 }
 
 function learnChinese() { //links to where to learn chinese
