@@ -94,9 +94,9 @@
 						<input type="button" id="pause_button" onclick="pauseVideo(vid)" value="Pause">
 						<input type="button" id="mute" onclick="muteVideo(vid)" value="Mute">
 						<input type="button" id="unmute" onclick="unmuteVideo(vid)" value="Unmute">
-						<input type="button" id="rewind" onclick="" value="Beginning">
-						<input type="button" id="end" onclick="" value="End">
-						<input type="button" id="seek" onclick="" value="Go to Statistics">
+						<input type="button" id="rewind" onclick="seekVideo(vid, 0)" value="Beginning">
+						<input type="button" id="end" onclick="seekVideo(vid, 265)" value="End">
+						<input type="button" id="seek" onclick="seekVideo(vid, 188)" value="Go to Bridge">
 					</fieldset>
 					<fieldset class="half">
 						<select id="video_select">
