@@ -30,21 +30,20 @@
 		clip.pause();
 	}
 
-	/* function below written by GLB */
-	function stopVideo(clip)
-	{
-		clip.pause();
-		clip.currentTime = 0;
-	}
-
 	function muteVideo(clip) 
 	{
 		clip.muted = true;
+		if(document.getElementById("unmute").disabled = true) {
+			document.getElementById("unmute").disabled = false;
+		}
+		document.getElementById("mute").disabled = true;
 	}
 
 	function unmuteVideo(clip) 
 	{
 		clip.muted = false;
+		document.getElementById("mute").disabled = false;
+		document.getElementById("unmute").disabled = true;
 	}
 
 	function onFinished(clip) 

@@ -74,7 +74,7 @@ function subtitleAttention() { // pop-up to let user know they can change the su
 
 function learnChinese() { //links to where to learn chinese
     document.querySelector("#web").src =
-        "https://web.archive.org/web/20200515203419/https://www.languageadvantage.com/learn-to-speak-a-language/learn-to-speak-mandarin-chinese/";
+        "https://www.cmuse.org/learn-chinese-lessons-online/";
 }
 
 function jjLin() { // about JJ Lin
