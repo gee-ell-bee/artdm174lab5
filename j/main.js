@@ -51,7 +51,12 @@ document.addEventListener("DOMContentLoaded", (e) => {
 //You can code up whatever behavior you need in your own callbacks
 //feel free to rename the functions to be more descriptive of what they do.
 function askAboutLanguage() { // pop-up to let user know they can change the sub/captions language from English to Chinese
-    let newInfo = document.createElement()
+    let pop = document.querySelector(".pop");
+    pop.innerHTML = "<p>Prefer Chinese subtitles?</p>";
+    pop.classList.toggle("hide");
+    setTimeout(() => {
+        pop.classList.toggle("hide");
+    }, 2000);
 }
 
 function func2() {

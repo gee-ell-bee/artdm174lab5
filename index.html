@@ -1,9 +1,11 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
 
 <head>
-	<title>Grey's Lab 5: HTML5 Video with JS synchronized cuepoints</title>
 	<meta charset="utf8_general_ci">
+	<title>Grey's Lab 5: HTML5 Video with JS synchronized cuepoints</title>
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<meta name="author" content="tb + Grey Larrain Bratt">
 
 	<link rel="stylesheet" href="c/main.css">
@@ -21,65 +23,74 @@
 			<audio id="audio" src="assets/audio/jj_lin_twilight.mp3" controls>
 				<source src="assets/audio/jj_lin_twilight.mp3" type="mp3">
 				<source src="assets/audio/jj_lin_twilight.webm" type="webm">
-				<p>Your browser cannot play this file, here is a link to the audio: <a href="assets/audio/jj_lin_twilight.mp3">Twilight</a>.</p>
+				<p>Your browser cannot play this file, here is a link to the audio: <a
+						href="assets/audio/jj_lin_twilight.mp3">Twilight</a>.</p>
 			</audio>
 
-			<video id="vid" width="528" controls>
-				<source src="assets/video/jj_lin_twilight.mp4" type="video/mp4">
-				<source src="assets/video/jj_lin_twilight.webm" type="video/webm">
-				<track label="English &lbrack;Subtitles&rbrack;" kind="subtitles" label="On" srclang="en" src="captions/jj_lin_twilight_eng_subs.vtt" default>
-				<track label="中文 - 繁體" kind="captions" srclang="zh" label="Off" src="captions/jj_lin_twilight_chtrad_caps.vtt">
+			<div id="vidWrap">
+				<div class="pop hide">
+					<p></p>
+				</div>
+				<video id="vid" width="528" controls>
 
-				<!-- final fallback to text -->
-				<h2>Twilight by J.J. Lin</h2>
-				<p>Forgive me for this song, not written to anyone in particular.<br>
-					I have a feeling the night sky out of this window<br>
-					is one I've seen before. But when I look back, suddenly I don't recognize a thing.<br>
-					I'm searching through my memories over and over; of people, and those they care about<br>
-					Of places, and the ones I've moved beyond; Please, wait a minute</p>
-					
+					<source src="assets/video/jj_lin_twilight.mp4" type="video/mp4">
+					<source src="assets/video/jj_lin_twilight.webm" type="video/webm">
+					<track label="English &lbrack;Subtitles&rbrack;" kind="subtitles" label="On" srclang="en"
+						src="captions/jj_lin_twilight_eng_subs.vtt" default>
+					<track label="中文 - 繁體" kind="captions" srclang="zh" label="Off"
+						src="captions/jj_lin_twilight_chtrad_caps.vtt">
+
+					<!-- final fallback to text -->
+					<h2>Twilight by J.J. Lin</h2>
+					<p>Forgive me for this song, not written to anyone in particular.<br>
+						I have a feeling the night sky out of this window<br>
+						is one I've seen before. But when I look back, suddenly I don't recognize a thing.<br>
+						I'm searching through my memories over and over; of people, and those they care about<br>
+						Of places, and the ones I've moved beyond; Please, wait a minute</p>
+
 					<p>Hard work melted [my] dreams down to water. Love's at my back pushing me to keep going<br>
-					But only when I lift my head up do I realize, I might have forgotten somebody along the way.<br>
-					So tired I can't sleep all night, everywhere you look you see the beauty of the night sky<br>
-					There must be someone; hiding away, escaping, dodging, concealing herself,<br>
-					Who is she?<br>
-					Who is she</p>
+						But only when I lift my head up do I realize, I might have forgotten somebody along the way.<br>
+						So tired I can't sleep all night, everywhere you look you see the beauty of the night sky<br>
+						There must be someone; hiding away, escaping, dodging, concealing herself,<br>
+						Who is she?<br>
+						Who is she</p>
 
 					<p>Ooh</p>
-					
+
 					<p>Forgive me for this song, not written to anyone in particular.<br>
-					I have a feeling the night sky out of this window<br>
-					is one I've seen before. But when I look back, suddenly I don't recognize a thing.<br>
-					I'm looking through my memories over and over; of people, and those they care about<br>
-					Of places, and the ones I've moved beyond;</p>
-					
+						I have a feeling the night sky out of this window<br>
+						is one I've seen before. But when I look back, suddenly I don't recognize a thing.<br>
+						I'm looking through my memories over and over; of people, and those they care about<br>
+						Of places, and the ones I've moved beyond;</p>
+
 					<p>Hard work melted [my] dreams down to water. Love's at my back pushing me to keep going<br>
-					But only when I lift my head up do I realize, I might have forgotten somebody along the way.<br>
-					So tired I can't sleep all night, everywhere you look you see the beauty of the night sky<br>
-					There must be someone; hiding away, escaping, dodging, concealing herself,<br>
-					Who is she,<br>
-					Who is she?</p>
+						But only when I lift my head up do I realize, I might have forgotten somebody along the way.<br>
+						So tired I can't sleep all night, everywhere you look you see the beauty of the night sky<br>
+						There must be someone; hiding away, escaping, dodging, concealing herself,<br>
+						Who is she,<br>
+						Who is she?</p>
 
 					<p>Ohh</p>
-					
+
 					<p>Maybe only when I truly face myself can I release my inhibitions,<br>
-					And uncover what at first I was too afraid to face</p>
-					
+						And uncover what at first I was too afraid to face</p>
+
 					<p>Hard work melted [my] dreams down to water. Love's at my back pushing me to keep going<br>
-					But only when I lift my head up do I realize, I might have forgotten somebody along the way.<br>
-					So tired I can't sleep all night, everywhere you look you see the beauty of the night sky<br>
-					She must be there; hiding away, escaping, dodging, concealing herself,<br>
-					Who is she?<br>
-					Who is she?</p>
-					
+						But only when I lift my head up do I realize, I might have forgotten somebody along the way.<br>
+						So tired I can't sleep all night, everywhere you look you see the beauty of the night sky<br>
+						She must be there; hiding away, escaping, dodging, concealing herself,<br>
+						Who is she?<br>
+						Who is she?</p>
+
 					<p>Who is she?</p>
-			</video>
+				</video>
+			</div>
 
 
 			<div id="controls">
 				<form id="video_form">
 					<fieldset>
-						<input type="button" id="play_button" onclick="playVideo(vid)" value="Play">
+						<input type="button" id="play_button" onclick="playMedia(vid)" value="Play">
 						<input type="button" id="pause_button" onclick="pauseVideo(vid)" value="Pause">
 						<input type="button" id="mute" onclick="muteVideo(vid)" value="Mute">
 						<input type="button" id="unmute" onclick="unmuteVideo(vid)" value="Unmute">
@@ -92,10 +103,14 @@
 							<option>Select a video to play...</option>
 							<option value="assets/video/jj_lin_twilight.mp4">Twilight (MP4)</option>
 							<option value="assets/video/jj_lin_twilight.webm">Twilight (WEBM)</option>
-							<option value="assets/video/jj_lin_twilight_instrumental_lyrics_chtrad.mp4">Twilight - Instrumental (MP4)</option>
-							<option value="assets/video/jj_lin_twilight_instrumental_lyrics_chtrad.webm">Twilight - Instrumental (WEBM)</option>
-							<option value="assets/video/jj_lin_twilight_lyrics_chtrad_py_en.webm">Twilight (with lyrics) (WEBM)</option>
-							<option value="assets/video/jj_lin_twilight_lyrics_chtrad_py_en.mp4">Twilight (with lyrics) (MP4)</option>
+							<option value="assets/video/jj_lin_twilight_instrumental_lyrics_chtrad.mp4">Twilight -
+								Instrumental (MP4)</option>
+							<option value="assets/video/jj_lin_twilight_instrumental_lyrics_chtrad.webm">Twilight -
+								Instrumental (WEBM)</option>
+							<option value="assets/video/jj_lin_twilight_lyrics_chtrad_py_en.webm">Twilight (with lyrics)
+								(WEBM)</option>
+							<option value="assets/video/jj_lin_twilight_lyrics_chtrad_py_en.mp4">Twilight (with lyrics)
+								(MP4)</option>
 						</select>
 					</fieldset>
 					<fieldset class="half">
@@ -103,23 +118,21 @@
 							<option>Select an audio file to play...</option>
 							<option value="assets/audio/jj_lin_twilight.mp3">Twilight (MP3)</option>
 							<option value="assets/audio/jj_lin_twilight.webm">Twilight (WEBM)</option>
-							<option value="assets/audio/jj_lin_twilight_instrumental.MP3">Twilight - Instrumental (MP3)</option>
-							<option value="assets/audio/jj_lin_twilight_instrumental.webm">Twilight - Instrumental (WEBM)</option>
+							<option value="assets/audio/jj_lin_twilight_instrumental.MP3">Twilight - Instrumental (MP3)
+							</option>
+							<option value="assets/audio/jj_lin_twilight_instrumental.webm">Twilight - Instrumental
+								(WEBM)</option>
 						</select>
 					</fieldset>
 					<fieldset>
 						<label>Currently, rewind only works in Safari
-							<input type="button" id="rw" onclick="playRate(vid, -1)" title="Rewind" value="&lt; &lt;">
+							<input type="button" id="rw" onclick="playRate(vid, -2.5)" title="Rewind" value="&lt; &lt;">
 						</label>
-						<input type="button" id="ff" onclick="playRate(vid, 1.5)" title="Fast Forward" value="> >">
+						<input type="button" id="ff" onclick="playRate(vid, 2.5)" title="Fast Forward" value="> >">
 						<input type="button" id="slo" onclick="playRate(vid, .5)" title="Half Speed" value="slo mo >">
 						<input type="button" id="normal" onclick="playRate(vid, 1)" value="normal >">
 					</fieldset>
 				</form>
-			</div>
-
-			<div class="pop hide">
-				<p>Test This!</p>
 			</div>
 		</section>
 
@@ -130,4 +143,5 @@
 	</main>
 
 </body>
+
 </html>
