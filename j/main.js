@@ -32,9 +32,17 @@ document.addEventListener("DOMContentLoaded", (e) => {
 
     // make the select list control what video format to play
     selectList.addEventListener("change", (e) => {
-        selectVideo(e, vid);
+        selectMedia(e, vid);
     });
 
+    //shortcut variables
+    const aud = document.querySelector("#audio");
+    const audList = document.querySelector("#audio_select");
+
+    //make the list control what audio plays
+    audList.addEventListener("change", (e) => {
+        selectMedia(e, aud);
+    })
 });
 
 
@@ -43,7 +51,7 @@ document.addEventListener("DOMContentLoaded", (e) => {
 //You can code up whatever behavior you need in your own callbacks
 //feel free to rename the functions to be more descriptive of what they do.
 function askAboutLanguage() { // pop-up to let user know they can change the sub/captions language from English to Chinese
-
+    let newInfo = document.createElement()
 }
 
 function func2() {
