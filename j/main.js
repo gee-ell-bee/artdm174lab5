@@ -18,7 +18,7 @@ document.addEventListener("DOMContentLoaded", (e) => {
     var myCues = [
         { seconds: 10, callback: askAboutLanguage },
         { seconds: 35, callback: func2 },
-        { seconds: 15, callback: func3 }
+        { seconds: 50, callback: func3 }
     ];
 
     //this activates the cuepoints module.
@@ -59,12 +59,14 @@ function askAboutLanguage() { // pop-up to let user know they can change the sub
     }, 2000);
 }
 
-function func2() {
-    
+function func2() { //links to where to learn chinese
+    document.querySelector("#web").src =
+        "https://web.archive.org/web/20200515203419/https://www.languageadvantage.com/learn-to-speak-a-language/learn-to-speak-mandarin-chinese/";
 }
 
 function func3() {
-
+    document.querySelector("#web").src =
+        "https://en.wikipedia.org/wiki/JJ_Lin";
 }
 
 
