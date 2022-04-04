@@ -107,15 +107,13 @@ iframe {
 	z-index:3;
   opacity: 1;
   transition: all .1s;
-  
-	background:rgba(99, 77, 55, .5);
-	border:3px solid red;
-	color:#fff;
 }
 
 .styles {
-	color:#fff;
+  animation: 1s ease-out 0s 1 backwards fadeIn;
+	background:rgba(99, 77, 55, .5);
 	border:3px solid red;
+	color:#fff;
 }
 
 
@@ -133,5 +131,15 @@ iframe {
 
   .col2 {
     grid-row: 2;
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
   }
 }

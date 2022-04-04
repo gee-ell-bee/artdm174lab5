@@ -15,16 +15,22 @@ import { cueTimer } from "./modules/cuepoints.js";
 
 document.addEventListener("DOMContentLoaded", (e) => {
 
-    var myCues = [
-        { seconds: 10, callback: askAboutLanguage },
-        { seconds: 35, callback: func2 },
-        { seconds: 50, callback: func3 }
+    var myVidCues = [
+        { seconds: 10, callback: subtitleAttention },
+        { seconds: 35, callback: learnChinese },
+        { seconds: 50, callback: jjLin }
     ];
+
+    var myAudCues = [
+        { seconds: 28, callback: learnChinese },
+        { seconds: 50, callback: jjLin }
+    ]
 
     //this activates the cuepoints module.
     // Pass it the ID of the video to watch
     // and the array of cuepoint objects.
-    cueTimer.setup("vid", myCues);
+    cueTimer.setup("vid", myVidCues);
+    cueTimer.setup("audio", myAudCues);
 
     //shortcut variables
     const vid = document.querySelector("#vid");
@@ -50,21 +56,28 @@ document.addEventListener("DOMContentLoaded", (e) => {
 //the custom callback functions to trigger when a cuepoint is hit.
 //You can code up whatever behavior you need in your own callbacks
 //feel free to rename the functions to be more descriptive of what they do.
-function askAboutLanguage() { // pop-up to let user know they can change the sub/captions language from English to Chinese
+function subtitleAttention() { // pop-up to let user know they can change the sub/captions language from English to Chinese
     let pop = document.querySelector(".pop");
+
+    // changes to pop
+    //changing style & adding reveal animation
+    pop.classList.add("styles");
+    //changing contents
     pop.innerHTML = "<p>Prefer Chinese subtitles?</p>";
+    
+    // hiding
     pop.classList.toggle("hide");
     setTimeout(() => {
         pop.classList.toggle("hide");
     }, 2000);
 }
 
-function func2() { //links to where to learn chinese
+function learnChinese() { //links to where to learn chinese
     document.querySelector("#web").src =
         "https://web.archive.org/web/20200515203419/https://www.languageadvantage.com/learn-to-speak-a-language/learn-to-speak-mandarin-chinese/";
 }
 
-function func3() {
+function jjLin() { // about JJ Lin
     document.querySelector("#web").src =
         "https://en.wikipedia.org/wiki/JJ_Lin";
 }
